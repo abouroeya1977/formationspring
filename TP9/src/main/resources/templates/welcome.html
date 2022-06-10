@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Formation Spring Boot : Services Web</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<table>
+		<tr align="center">
+			<td><a th:href="@{/login?language=ar}"> <img
+					th:src="@{/images/ar.png}" class="img-responsive center-block"
+					width="50" height="50" alt="Arabe" />
+			</a></td>
+			<td><a th:href="@{/login?language=fr}"> <img
+					th:src="@{/images/fr.png}" class="img-responsive center-block"
+					width="50" height="50" alt="Français" />
+			</a></td>
+
+			<td><a th:href="@{/login?language=en}"> <img
+					th:src="@{/images/en.png}" class="img-responsive center-block"
+					width="50" height="50" alt="Anglais" />
+			</a></td>
+
+		</tr>
+	</table>
+
+
+	<div class="container">
+		<span th:utext="${userName}"></span> <br>
+		<form th:action="@{/client}" method="get">
+			<button class="btn btn-md btn-danger btn-block"
+				name="Services Métier" type="Submit"><p th:text="#{msg.pour.les.clients}"/></button>
+		</form>
+		<br>
+			
+		<form th:action="@{/admin/emp/list}" method="get">
+			<button class="btn btn-md btn-danger btn-block"
+				name="Créer un nouvel utilisateur" type="Submit"><p th:text="#{msg.gestion.des.articles}"/></button>
+		</form>
+	</div>
+</body>
+</html>
